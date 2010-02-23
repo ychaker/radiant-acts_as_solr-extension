@@ -1,0 +1,9 @@
+<div id='search-form'>
+	<% form_tag '/search' do -%>
+	    <div>
+				<%= text_field_tag 'query', params[:query] %>
+				<%= select_tag 'model', "<option value='All'>All</option>" + options_for_select(@search_models - ["PagePart"], params[:model]) %>
+				<%= submit_tag 'Search' %>
+			</div>
+	<% end -%>
+</div>

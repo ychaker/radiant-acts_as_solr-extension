@@ -1,0 +1,17 @@
+<% unless @results.blank? %>
+	<% unless @results.facets.blank? ||  @results.facets["facet_fields"].blank? %>
+		<div id='facets'>
+			<h2><%= title %></h2>
+			<% @results.facets["facet_fields"].keys.each do |facet_field| %>
+				<div id='	<%= facet_field %>'>
+					<h3><%= facet_field.titleize %></h3>
+					<ul>
+						<% @results.facets["facet_fields"][facet_field].each_pair do |key, value| %>
+							<li><%= render_facet key, value, facet_field, params, @browse_array %></li>
+						<% end %>
+					</ul>
+				</div>
+			<% end %>
+		</div>
+	<% end %>
+<% end %>

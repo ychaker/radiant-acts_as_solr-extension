@@ -1,0 +1,11 @@
+<h1>Search</h1>
+
+<%= render :partial => 'search_form', :locals => { :search_models => @search_models } %>
+
+<%= render :partial => 'total', :locals => { :resutls => @results } %>
+
+<%= render :partial => 'docs', :locals => { :resutls => @results, :title => "Results" } %>
+
+<% if ActsAsSolrExtension::AAS_YML['show_facets'] %>
+	<%= render :partial => 'facets', :locals => { :resutls => @results, :title => "Facets" } %>
+<% end %>

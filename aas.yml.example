@@ -1,0 +1,11 @@
+models: 
+  Page: 
+    fields: ["title", "description", "keywords"]
+    facets: ["title", "keywords"]
+  PagePart: 
+    fields: ["content"]
+    facets:
+
+render_blanks: false
+    
+show_facets: true

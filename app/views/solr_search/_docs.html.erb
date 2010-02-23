@@ -1,0 +1,10 @@
+<% unless @results.blank? || @results.docs.blank? %>
+	<h2><%= title %></h2>
+	<div id='docs'>
+		<ul>
+			<% @results.docs.each do |doc| %>
+				<li><%= render_doc doc %></li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
