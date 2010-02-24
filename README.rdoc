@@ -15,21 +15,23 @@ An extension that makes use of the Rails acts_as_solr plugin in Radiant
 run:
 
  git clone git://github.com/radiant/radiant-share-layouts-extension.git share_layouts
-	
-then in the aas.yml config file, specify which layout you want the search page to inherit from
 
 = Installation
 
 Clone the extension from its GitHub repository:
 	
  cd /root/to/your/radiant/app/
- cd vendor/extenions
- git clone git@github.com:ychaker/radiant-acts_as_solr-extension.git acts_as_solr
+ git clone git@github.com:ychaker/radiant-acts_as_solr-extension.git vendor/extensions/acts_as_solr
 	
-then copy the configuration file into the /config directory
+Or use the Radiant extension method:
+
+ script/extension install acts_as_solr
+
+Copy the configuration file into the /config directory (this has to be done either way!)
 
  cp vendor/extensions/acts_as_solr/aas.yml.example config/aas.yml
-
+	
+then in the aas.yml config file, specify which layout you want the search page to inherit from
 
 = Quick Start
 
