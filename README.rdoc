@@ -8,11 +8,11 @@ acts_as_solr plugin:: multiple forks exist on GitHub, this extension was tested 
 
 solr:: acts_as_solr comes with a pre configured version of Solr (1.3). It is recommended that you use that installation of Solr but if you prefer to run your own or to point to a installation running on a remote server, make sure you use the same schema.xml and solrconfig.xml settings. 
 
-share_layouts extension: In 
+share_layouts extension:: In 
 
 	/vendor/extensions
 
-run :
+run:
 
 	git clone git://github.com/radiant/radiant-share-layouts-extension.git share_layouts
 	
