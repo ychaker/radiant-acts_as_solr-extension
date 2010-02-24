@@ -4,7 +4,7 @@
 class ActsAsSolrExtension < Radiant::Extension
   version "1.0"
   description "Brings the functionality of the acts_as_solr Rails plugin to Radiant"
-  url "http://yourwebsite.com/acts_as_solr"
+  url "http://github.com/ychaker/radiant-acts_as_solr-extension"
   
   AAS_YML = YAML::load_file(RAILS_ROOT + '/config/aas.yml')
   SOLR_MODELS = AAS_YML['models'].keys
@@ -19,7 +19,7 @@ class ActsAsSolrExtension < Radiant::Extension
   end
   
   def activate
-    # admin.tabs.add "Apache Solr", "/admin/apache_solr", :after => "Layouts", :visibility => [:all]  
+    # admin.tabs.add "Apache Solr", "/admin/apache_solr", :after => "Layouts", :visibility => [:all]
     SOLR_MODELS.each {
       |class_name|
       config = AAS_YML

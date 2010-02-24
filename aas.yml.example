@@ -9,3 +9,5 @@ models:
 render_blanks: false
     
 show_facets: true
+
+layout: Default

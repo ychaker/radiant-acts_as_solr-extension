@@ -1,6 +1,7 @@
 class SolrSearchController < ApplicationController
   skip_before_filter :verify_authenticity_token
   no_login_required
+  radiant_layout ActsAsSolrExtension::AAS_YML['layout']
   
   def index
     query = params[:query]
@@ -9,7 +10,7 @@ class SolrSearchController < ApplicationController
     @search_models = ActsAsSolrExtension::SOLR_MODELS
     
     if !model.nil? && model == "Page"
-      @results = Page.multi_solr_search query, :models => ["Page", "PagePart"]
+      @results = Page.multi_solr_search query, :models => ["PagePart"]
     elsif !model.nil? && model != "All"
       @results= Object.const_get(model).find_by_solr query, 
                                             :facets => {  
