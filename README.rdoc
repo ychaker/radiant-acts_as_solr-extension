@@ -40,10 +40,38 @@ After you have setup solr and the acts_as_solr plugin, make sure you edit the co
 then start the server 
 
 	./script/server
+	
+and the solr server
+
+	rake solr:start
 		
-and navigate to the search page
+then navigate to the search page (make sure you commit an update to the database to ensure an indexing of the tables, or else you will not get back any results on the search)
 
 	http://localhost:3000/search
+
+= Notes
+
+rake solr:reindex returns "There were no models to reindex."
+
+if you have rows in your db that have already been created and you want them to be indexed run:
+./script/console
+>>  Page.rebuild_solr_index
+
+(on all the models you want to reindex, eg. Page, PagePart)
+
+OR...create a new entry and let acts_as_solr's automatic update handle the indexing
+
+
+Keywords: stored in db as a string so they are treated as one string in search and are not split in facets.
+
+
+Facets don't work with multi_solr_search so won't show up for All or Page searches
+
+
+Facet drill down doesn't work with facets that contain spaces (eg. "Home Page")
+
+
+When searching for pages, might get duplicates because Page and PagePart are joined together in the search and some searches will match Page fields and PagePart fields as well and create duplicate results
 
 = License
 
