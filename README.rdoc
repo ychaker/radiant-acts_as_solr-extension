@@ -10,11 +10,11 @@ An extension that makes use of the Rails acts_as_solr plugin in Radiant
 
 * share_layouts extension: In 
 
-	/vendor/extensions
+ /vendor/extensions
 
 run:
 
-	git clone git://github.com/radiant/radiant-share-layouts-extension.git share_layouts
+ git clone git://github.com/radiant/radiant-share-layouts-extension.git share_layouts
 	
 then in the aas.yml config file, specify which layout you want the search page to inherit from
 
@@ -22,40 +22,41 @@ then in the aas.yml config file, specify which layout you want the search page t
 
 Clone the extension from its GitHub repository:
 	
-	cd /root/to/your/radiant/app/
-	cd vendor/extenions
-	git clone git@github.com:ychaker/radiant-acts_as_solr-extension.git acts_as_solr
+ cd /root/to/your/radiant/app/
+ cd vendor/extenions
+ git clone git@github.com:ychaker/radiant-acts_as_solr-extension.git acts_as_solr
 	
 then copy the configuration file into the /config directory
 
-	cp vendor/extensions/acts_as_solr/aas.yml.example config/aas.yml
+ cp vendor/extensions/acts_as_solr/aas.yml.example config/aas.yml
 
 
 = Quick Start
 
 After you have setup solr and the acts_as_solr plugin, make sure you edit the config file to your likings:
 
-	config/aas.yml
+ config/aas.yml
 
 then start the server 
 
-	./script/server
+ ./script/server
 	
 and the solr server
 
-	rake solr:start
+ rake solr:start
 		
 then navigate to the search page (make sure you commit an update to the database to ensure an indexing of the tables, or else you will not get back any results on the search)
 
-	http://localhost:3000/search
+ http://localhost:3000/search
 
 = Notes
 
 rake solr:reindex returns "There were no models to reindex."
 
 if you have rows in your db that have already been created and you want them to be indexed run:
-./script/console
->>  Page.rebuild_solr_index
+
+ ./script/console
+ >>  Page.rebuild_solr_index
 
 (on all the models you want to reindex, eg. Page, PagePart)
 
