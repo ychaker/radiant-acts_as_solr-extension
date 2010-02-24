@@ -4,7 +4,7 @@ An extension that makes use of the Rails acts_as_solr plugin in Radiant
 
 = Requirements
 
-acts_as_solr plugin:: multiple forks exist on GitHub, this extension was tested and developed against the mattmatt fork: http://github.com/mattmatt/acts_as_solr
+* acts_as_solr plugin: multiple forks exist on GitHub, this extension was tested and developed against the mattmatt fork: http://github.com/mattmatt/acts_as_solr
 
 solr:: acts_as_solr comes with a pre configured version of Solr (1.3). It is recommended that you use that installation of Solr but if you prefer to run your own or to point to a installation running on a remote server, make sure you use the same schema.xml and solrconfig.xml settings. 
 
